@@ -1,18 +1,6 @@
 # Linux.com Kubernetes CI/CD Blog Series by Kenzan
 
-The kubernetes-ci-cd project is [Kenzan's](http://techblog.kenzan.com/) crossword puzzle application that runs as several containers in Kubernetes (we call it the Kr8sswordz Puzzle). It showcases Kubernetes features like spinning up multiple pods and running a load test at scale. It also features Jenkins running on its own a container and a JenkinsFile script to demonstrate how Kubernetes can be integrated into a full CI/CD pipeline. 
-
-To get it up and running, see the following week-by-week Linux.com blog posts, or simply follow the directions below. 
-
-[Linux.com Part 1](https://www.linux.com/blog/learn/chapter/Intro-to-Kubernetes/2017/5/set-cicd-pipeline-kubernetes-part-1-overview)
-
-[Linux.com Part 2](https://www.linux.com/blog/learn/chapter/Intro-to-Kubernetes/2017/6/set-cicd-pipeline-jenkins-pod-kubernetes-part-2)
-
-[Linux.com Part 3](https://www.linux.com/blog/learn/chapter/intro-to-kubernetes/2017/6/run-and-scale-distributed-crossword-puzzle-app-cicd-kubernetes-part-3)
-
-[Linux.com Part 4](https://www.linux.com/blog/learn/chapter/intro-to-kubernetes/2017/6/set-cicd-distributed-crossword-puzzle-app-kubernetes-part-4)
-
-To generate this readme: `node readme.js`
+ To generate this readme: `node readme.js`
 
 ## Interactive Tutorial Version
 To complete the tutorial using the interactive script:
@@ -35,6 +23,7 @@ Begin the desired section:
 
 
 ## Manual Tutorial Version
+
 
 To complete the tutorial manually, follow the steps below.
 
@@ -97,9 +86,9 @@ View the registry user interface in a web browser.
 
 #### Step10
 
-Let’s make a change to an HTML file in the cloned project. Open the /applications/hello-kenzan/index.html file in your favorite text editor (for example, you can use nano by running the command 'nano applications/hello-kenzan/index.html' in a separate terminal). Change some text inside one of the <p> tags. For example, change “Hello from Kenzan!” to “Hello from Me!”. Save the file.
+Let’s make a change to an HTML file in the cloned project. Running the command below will open /applications/hello-kenzan/index.html in the nano text editor. Change some text inside one of the <p> tags. For example, change “Hello from Kenzan!” to “Hello from Me!”. When you’re done, press Ctrl+X to close the file, type Y to confirm the filename, and press Enter to write the changes to the file.
 
-`echo ''`
+`nano applications/hello-kenzan/index.html`
 
 #### Step11
 
@@ -385,9 +374,9 @@ Spin up several instances of the puzzle service by moving the slider to the righ
 
 #### Step9
 
-Edit applications/puzzle/common/models/crossword.js in your favorite text editor (for example, you can use nano by running the command 'nano applications/puzzle/common/models/crossword.js' in a separate terminal). You'll see a commented section on lines 42-43 that indicates to uncomment a specific line. Uncomment line 43 by deleting the forward slashes and save the file. 
+Edit applications/puzzle/common/models/crossword.js in the nano editor. You'll see a commented section on lines 42-43 that indicates to uncomment a specific line. Uncomment line 43 by deleting the forward slashes. Press Ctrl+X to close the file, type Y to confirm the filename, and press Enter to write the changes to the file.
 
-`echo ''`
+`nano applications/puzzle/common/models/crossword.js`
 
 #### Step10
 
@@ -412,18 +401,3 @@ After it triggers, observe how the puzzle services disappear in the Kr8sswordz P
 Try clicking Submit to test that hits now register as light green.
 
 `echo ''`
-
- ## LICENSE
-Copyright 2017 Kenzan, LLC <http://kenzan.com>
- 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
- 
-    http://www.apache.org/licenses/LICENSE-2.0
- 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
