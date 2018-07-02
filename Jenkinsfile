@@ -7,14 +7,14 @@ node {
     sh "git rev-parse --short HEAD > commit-id"
 
     tag = readFile('commit-id').replace("\n", "").replace("\r", "")
-    appName = "hello-kenzan"
+    appName = "hello-newdevops"
     registryHost = "reg.engage.newdevops.net/"
     imageName = "${registryHost}ops/${appName}:${tag}"
     env.BUILDIMG=imageName
 
     stage "Build"
     
-        sh "docker build -t ${imageName} -f applications/hello-kenzan/Dockerfile applications/hello-kenzan"
+        sh "docker build -t ${imageName} -f applications/hello-newdevops/Dockerfile applications/hello-newdevops"
     
     stage "Push"
 
@@ -22,6 +22,6 @@ node {
 
     stage "Deploy"
 
-        sh "sed 's/latest/'$tag'/g' applications/hello-kenzan/k8s/deployment.yaml | kubectl apply -f -"
-        sh "kubectl rollout status deployment/hello-kenzan"
+        sh "sed 's/latest/'$tag'/g' applications/hello-newdevops/k8s/deployment.yaml | kubectl apply -f -"
+        sh "kubectl rollout status deployment/hello-newdevops"
 }

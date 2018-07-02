@@ -55,7 +55,7 @@ spec:
         tier: jenkins
     spec:
       containers:
-      - image: chadmoon/jenkins-docker-kubectl:latest
+      - image: reg.engage.newdevops.net/ops/jenkins-ci:aws
         name: jenkins
         securityContext:
           privileged: true
