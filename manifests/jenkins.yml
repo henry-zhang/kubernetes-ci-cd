@@ -55,7 +55,7 @@ spec:
         tier: jenkins
     spec:
       containers:
-      - image: reg.engage.newdevops.net/ops/jenkins-ci:aws
+      - image: registry-vpc.cn-huhehaote.aliyuncs.com/henryops/jenkins:aws
         name: jenkins
         securityContext:
           privileged: true

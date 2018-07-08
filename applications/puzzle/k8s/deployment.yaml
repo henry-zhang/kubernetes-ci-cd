@@ -14,7 +14,7 @@ spec:
         tier: puzzle
     spec:
       containers:
-      - image: reg.engage.newdevops.net/ops/puzzle:latest
+      - image: registry-vpc.cn-huhehaote.aliyuncs.com/henryops/puzzle:latest
         name: puzzle
         imagePullPolicy: Always
         lifecycle:
@@ -91,7 +91,7 @@ spec:
     serviceName: puzzle
     servicePort: 3000
   rules:
-  - host: puzzle.192.168.99.100.xip.io
+  - host: node01.aliyun
     http:
       paths:
       - path: /

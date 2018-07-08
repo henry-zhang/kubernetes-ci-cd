@@ -1,10 +1,11 @@
 #!/bin/bash
 
 #Retrieve the latest git commit hash
-TAG=`git rev-parse --short HEAD` 
+#TAG=`git rev-parse --short HEAD` 
+TAG=latest
 
 #Build the docker image
-docker build -t reg.engage.newdevops.net/ops/puzzle:$TAG -f applications/puzzle/Dockerfile applications/puzzle
+docker build -t registry-vpc.cn-huhehaote.aliyuncs.com/henryops/puzzle:$TAG -f applications/puzzle/Dockerfile applications/puzzle
 
 #Setup the proxy for the registry
 #docker stop socat-registry; docker rm socat-registry; docker run -d -e "REGIP=`minikube ip`" --name socat-registry -p 30400:5000 chadmoon/socat:latest bash -c "socat TCP4-LISTEN:5000,fork,reuseaddr TCP4:`minikube ip`:30400"
@@ -13,10 +14,10 @@ docker build -t reg.engage.newdevops.net/ops/puzzle:$TAG -f applications/puzzle/
 #sleep 5;
 
 #Push the images
-docker push reg.engage.newdevops.net/ops/puzzle:$TAG
+docker push registry-vpc.cn-huhehaote.aliyuncs.com/henryops/puzzle:$TAG
 
 #Stop the registry proxy
 #docker stop socat-registry
 
 # Create the deployment and service for the puzzle server aka puzzle
-sed 's#reg.engage.newdevops.net/ops/puzzle:latest#reg.engage.newdevops.net/ops/puzzle:'$TAG'#' applications/puzzle/k8s/deployment.yaml | kubectl apply -f -
+#sed 's#reg.engage.newdevops.net/ops/puzzle:latest#reg.engage.newdevops.net/ops/puzzle:'$TAG'#' applications/puzzle/k8s/deployment.yaml | kubectl apply -f -

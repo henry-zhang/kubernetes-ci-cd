@@ -30,7 +30,7 @@ spec:
         tier: monitor-scale
     spec:
       containers:
-      - image: reg.engage.newdevops.net/ops/monitor-scale:latest
+      - image: registry-vpc.cn-huhehaote.aliyuncs.com/henryops/monitor-scale:latest
         name: monitor-scale
         imagePullPolicy: Always
         ports:
@@ -55,7 +55,7 @@ spec:
     serviceName: monitor-scale
     servicePort: 3001
   rules:
-  - host: monitor-scale.192.168.99.100.xip.io
+  - host: node01.aliyun
     http:
       paths:
       - path: /

@@ -30,7 +30,7 @@ spec:
         tier: hello-newdevops
     spec:
       containers:
-      - image: reg.engage.newdevops.net/ops/hello-newdevops:latest
+      - image: registry-vpc.cn-huhehaote.aliyuncs.com/henryops/hello-newdevops:latest
         name: hello-newdevops
         ports:
         - containerPort: 80

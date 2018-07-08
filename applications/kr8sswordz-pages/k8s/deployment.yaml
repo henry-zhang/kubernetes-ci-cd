@@ -30,7 +30,7 @@ spec:
         tier: kr8sswordz
     spec:
       containers:
-      - image: reg.engage.newdevops.net/ops/kr8sswordz:latest
+      - image: registry.cn-huhehaote.aliyuncs.com/henryops/kr8sswordz:latest
         name: kr8sswordz
         imagePullPolicy: Always
         ports:
@@ -46,7 +46,7 @@ spec:
     serviceName: kr8sswordz
     servicePort: 80
   rules:
-  - host: kr8sswordz.192.168.99.100.xip.io
+  - host: node01.aliyun
     http:
       paths:
       - path: /
