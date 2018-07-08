@@ -9,7 +9,7 @@ node {
     tag = readFile('commit-id').replace("\n", "").replace("\r", "")
     appName = "hello-newdevops"
     registryHost = "registry-vpc.cn-huhehaote.aliyuncs.com"
-    imageName = "henryops/${appName}:${tag}"
+    imageName = "$registryHost/henryops/${appName}:${tag}"
     env.BUILDIMG=imageName
 
     stage "Build"
